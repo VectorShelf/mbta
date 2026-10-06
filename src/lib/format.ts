@@ -42,3 +42,6 @@ export const typeLabel: Record<string, string> = { diploma: 'دبلوم', live: 
 export const iso = (s?: string | null) => (s ? `⁦${s}⁩` : '')
 /** تمييز العدد: 3–10 درجات، وما عداها درجة */
 export const deg = (n: number) => `${n} ${n >= 3 && n <= 10 ? 'درجات' : 'درجة'}`
+
+/** مسار ملف من مجلد public مع مراعاة المسار الأساسي للنشر (مثل /mbta/) */
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`

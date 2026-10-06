@@ -29,7 +29,7 @@ function NotFound() {
 export default function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <Routes>
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />

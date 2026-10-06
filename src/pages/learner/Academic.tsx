@@ -5,7 +5,7 @@ import { useStore, newId } from '../../store/store'
 import { Tabs, AttBadge, Badge, Modal, Field, Empty, Callout, Avatar } from '../../components/ui'
 import { LiveRoom, SubmitModal, SubmissionStatus } from '../../components/shared'
 import { attendanceStats, pct } from '../../lib/calc'
-import { fDay, fTime, fDate, fDateY, relDay, isPast, deg } from '../../lib/format'
+import { fDay, fTime, fDate, fDateY, relDay, isPast, deg, asset } from '../../lib/format'
 import { MAIN_LEARNER, MAIN_PROGRAM } from '../../data/seed'
 import type { Assignment, Session } from '../../data/types'
 
@@ -289,7 +289,7 @@ function Certs() {
         <div className="card stack">
           <div className="row"><IdCard size={20} color="var(--gold-700)" /><h2 className="card-title">البطاقة الرقمية</h2></div>
           <div className="id-card">
-            <img src="/brand/logo-h-dark.png" alt="" style={{ height: 26, width: 'auto', alignSelf: 'flex-start' }} />
+            <img src={asset('brand/logo-h-dark.png')} alt="" style={{ height: 26, width: 'auto', alignSelf: 'flex-start' }} />
             <div className="row" style={{ gap: 14 }}>
               <Avatar name={me.name} size="lg" />
               <div>
@@ -308,7 +308,7 @@ function Certs() {
           <div className="row"><Award size={20} color="var(--gold-700)" /><h2 className="card-title">شهادة إتمام مقرر</h2></div>
           <div className="cert">
             <div className="watermark">معاينة تجريبية</div>
-            <img src="/brand/logo-h.png" alt="" style={{ height: 34, width: 'auto', margin: '0 auto' }} />
+            <img src={asset('brand/logo-h.png')} alt="" style={{ height: 34, width: 'auto', margin: '0 auto' }} />
             <div className="eyebrow" style={{ marginTop: 18 }}>شهادة إتمام</div>
             <div className="small muted" style={{ marginTop: 10 }}>يشهد المعهد بأن المتدرب</div>
             <div style={{ fontSize: 22, fontWeight: 700, marginTop: 4 }}>{me.name}</div>

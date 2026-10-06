@@ -7,6 +7,7 @@ import {
 import { useStore } from '../store/store'
 import { Avatar, Modal } from '../components/ui'
 import { MAIN_LEARNER, MAIN_TRAINER, MAIN_ADMIN, MAIN_PROGRAM } from '../data/seed'
+import { asset } from '../lib/format'
 
 type Role = 'learner' | 'trainer' | 'admin'
 
@@ -33,7 +34,7 @@ export default function PortalLayout() {
     <div className="portal">
       <aside className={`sidebar${dark ? ' dark' : ''}${open ? ' open' : ''}`} aria-label="القائمة الجانبية">
         <Link to="/" className="sidebar-logo" aria-label="الموقع العام">
-          <img src={dark ? '/brand/logo-h-dark.png' : '/brand/logo-h.png'} alt="معهد بوابة المستقبل العالي للتدريب" />
+          <img src={dark ? asset('brand/logo-h-dark.png') : asset('brand/logo-h.png')} alt="معهد بوابة المستقبل العالي للتدريب" />
         </Link>
         {role === 'learner' && (
           <nav className="stack sm" style={{ gap: 2 }}>

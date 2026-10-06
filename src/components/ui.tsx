@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, type CSSProperties, type ReactNode } from 're
 import { CheckCircle2, AlertCircle, X, Inbox, Info } from 'lucide-react'
 import { useStore } from '../store/store'
 import type { AttendanceStatus } from '../data/types'
+import { asset } from '../lib/format'
 
 export function Modal({ title, sub, onClose, children, footer, wide }: { title: string; sub?: ReactNode; onClose: () => void; children: ReactNode; footer?: ReactNode; wide?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -150,7 +151,7 @@ export function BrandArt({ variant = 'light', className, style }: { variant?: 'l
 }
 
 export function Logo({ dark, height = 40 }: { dark?: boolean; height?: number }) {
-  return <img src={dark ? '/brand/logo-h-dark.png' : '/brand/logo-h.png'} alt="معهد بوابة المستقبل العالي للتدريب" style={{ height, width: 'auto' }} />
+  return <img src={dark ? asset('brand/logo-h-dark.png') : asset('brand/logo-h.png')} alt="معهد بوابة المستقبل العالي للتدريب" style={{ height, width: 'auto' }} />
 }
 
 export function SimTag({ children = 'محاكاة' }: { children?: ReactNode }) {
