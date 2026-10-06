@@ -5,6 +5,7 @@ import '@fontsource/ibm-plex-sans-arabic/500.css'
 import '@fontsource/ibm-plex-sans-arabic/600.css'
 import '@fontsource/ibm-plex-sans-arabic/700.css'
 import './index.css'
+import './theme.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(

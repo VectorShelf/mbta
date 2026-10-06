@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom'
 import { Clock, MonitorPlay, CheckCircle2, CalendarDays, Users, ArrowLeft, Tag, ChevronLeft, FileText } from 'lucide-react'
 import { useStore, newId } from '../../store/store'
 import { Modal, Field, Avatar, Empty, Callout } from '../../components/ui'
-import { ProgramTop } from '../../components/ProgramCard'
 import { fDate, sar, typeLabel } from '../../lib/format'
 
 export default function ProgramDetail() {
@@ -21,21 +20,20 @@ export default function ProgramDetail() {
 
   return (
     <>
-      <section style={{ background: 'var(--charcoal)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', insetInlineEnd: 0, bottom: 0, width: 'min(380px, 40%)', height: '100%', opacity: .3 }}><ProgramTop type={p.type} height="100%" /></div>
-        <div className="container" style={{ position: 'relative', padding: '40px 24px 48px' }}>
-          <nav className="row small" style={{ gap: 6, color: '#BDB7AD', marginBottom: 20 }} aria-label="مسار التنقل">
-            <Link to="/programs">البرامج</Link><ChevronLeft size={14} /><span style={{ color: '#fff' }}>{p.title}</span>
+      <section className="hero detail-hero">
+        <div className="container" style={{ position: 'relative' }}>
+          <nav className="row small muted" style={{ gap: 6, marginBottom: 20 }} aria-label="مسار التنقل">
+            <Link to="/programs">البرامج</Link><ChevronLeft size={14} /><span style={{ color: 'var(--text)' }}>{p.title}</span>
           </nav>
           <div className="row wrap" style={{ gap: 8 }}>
-            <span className="badge plain" style={{ background: 'rgba(255,255,255,.92)' }}>{typeLabel[p.type]}</span>
-            <span className="badge plain" style={{ background: 'transparent', color: 'var(--gold-300)', borderColor: 'var(--charcoal-3)' }}>{p.domain}</span>
+            <span className="badge plain dark">{typeLabel[p.type]}</span>
+            <span className="badge plain">{p.domain}</span>
           </div>
-          <h1 style={{ fontSize: 40, marginTop: 14, maxWidth: 760 }}>{p.title}</h1>
-          <p style={{ color: '#D9D4CB', marginTop: 12, maxWidth: 640, fontSize: 17 }}>{p.summary}</p>
-          <div className="row wrap" style={{ gap: 24, marginTop: 24, color: '#D9D4CB' }}>
-            <span className="row" style={{ gap: 8 }}><MonitorPlay size={18} color="var(--gold-400)" />{p.mode}</span>
-            <span className="row" style={{ gap: 8 }}><Clock size={18} color="var(--gold-400)" />{p.duration}</span>
+          <h1 style={{ fontSize: 'clamp(30px, 4.5vw, 46px)', marginTop: 16, maxWidth: 760 }}>{p.title}</h1>
+          <p className="lead" style={{ marginTop: 12, maxWidth: 640 }}>{p.summary}</p>
+          <div className="row wrap muted" style={{ gap: 12, marginTop: 24 }}>
+            <span className="domain-chip" style={{ background: '#fff' }}><MonitorPlay />{p.mode}</span>
+            <span className="domain-chip" style={{ background: '#fff' }}><Clock />{p.duration}</span>
           </div>
         </div>
       </section>

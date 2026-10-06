@@ -29,12 +29,11 @@ export default function PortalLayout() {
   const pendingLeaves = state.leaves.filter((l) => l.status === 'pending').length
   const mySections = state.sections.filter((s) => s.trainerId === MAIN_TRAINER)
 
-  const dark = role !== 'learner'
   return (
     <div className="portal">
-      <aside className={`sidebar${dark ? ' dark' : ''}${open ? ' open' : ''}`} aria-label="القائمة الجانبية">
+      <aside className={`sidebar${open ? ' open' : ''}`} aria-label="القائمة الجانبية">
         <Link to="/" className="sidebar-logo" aria-label="الموقع العام">
-          <img src={dark ? asset('brand/logo-h-dark.png') : asset('brand/logo-h.png')} alt="معهد بوابة المستقبل العالي للتدريب" />
+          <img src={asset('brand/logo-h.png')} alt="معهد بوابة المستقبل العالي للتدريب" />
         </Link>
         {role === 'learner' && (
           <nav className="stack sm" style={{ gap: 2 }}>

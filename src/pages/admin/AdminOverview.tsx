@@ -57,8 +57,10 @@ export default function AdminOverview() {
       <div className="grid grid-4 stats">
         {stats.map((s) => (
           <div key={s.l} className="card stack sm">
-            <div className="icon-tile">{s.icon}</div>
-            <div className="stat" style={{ marginTop: 6 }}><span className="stat-value">{s.v}</span><span className="stat-label">{s.l}</span></div>
+            <div className="row between top">
+              <div className="stat"><span className="stat-value">{s.v}</span><span className="stat-label">{s.l}</span></div>
+              <div className="icon-tile">{s.icon}</div>
+            </div>
             <div className="xs muted">{s.sub}</div>
           </div>
         ))}

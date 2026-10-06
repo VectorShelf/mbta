@@ -35,14 +35,14 @@ export default function LearnerHome() {
   return (
     <div className="stack lg">
       <div className="welcome">
-        <BrandArt variant="dark" className="art" />
+        <BrandArt className="art" />
         <div style={{ position: 'relative', maxWidth: 560 }}>
           <div className="muted small">{program.title} · شعبة {iso(section.code)}</div>
           <h1 style={{ marginTop: 6 }}>مرحبًا {firstName}، لنكمل من حيث توقفت</h1>
           {next ? (
             <>
-              <p className="muted" style={{ marginTop: 8 }}>الدرس التالي: <span style={{ color: '#fff', fontWeight: 600 }}>{next.title}</span> — {next.courseTitle}</p>
-              <Link to={`/learner/lesson/${next.id}`} className="btn btn-primary btn-lg" style={{ marginTop: 20, background: 'var(--gold-500)', color: 'var(--charcoal)' }}><PlayCircle />أكمل الدرس</Link>
+              <p className="muted" style={{ marginTop: 8 }}>الدرس التالي: <span style={{ color: 'var(--text)', fontWeight: 600 }}>{next.title}</span> — {next.courseTitle}</p>
+              <Link to={`/learner/lesson/${next.id}`} className="btn btn-primary btn-lg btn-arrow" style={{ marginTop: 22 }}>أكمل الدرس<ArrowLeft /></Link>
             </>
           ) : (
             <p className="muted" style={{ marginTop: 8 }}>أكملت جميع دروس {currentTerm.title}. تُتاح دروس الفصل التالي بعد اعتماد التقييمات.</p>

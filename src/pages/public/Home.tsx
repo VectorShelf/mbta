@@ -43,7 +43,7 @@ export default function Home() {
             <h1 style={{ marginTop: 12 }}>{state.site.heroTitle}</h1>
             <p className="lead">{state.site.heroSub}</p>
             <div className="hero-actions">
-              <Link to="/programs" className="btn btn-primary btn-lg">استكشف البرامج<ArrowLeft /></Link>
+              <Link to="/programs" className="btn btn-primary btn-lg btn-arrow">استكشف البرامج<ArrowLeft /></Link>
               <Link to="/#services" className="btn btn-secondary btn-lg">حلول التدريب للجهات</Link>
             </div>
             {state.site.notice && <p className="small muted" style={{ marginTop: 20 }}>{state.site.notice}</p>}
@@ -139,7 +139,7 @@ export default function Home() {
                 <div className="stack sm grow">
                   <h3 className="card-title">منصة تعليمية واحدة لكل الأدوار</h3>
                   <p className="muted small">المتدرب يتابع تعلمه، والمدرب يدير شعبه، والإدارة ترى الصورة كاملة — في تجربة موحدة.</p>
-                  <Link to="/demo" className="btn btn-primary" style={{ alignSelf: 'flex-start', marginTop: 8 }}>جرّب بوابة المنصة<ArrowLeft /></Link>
+                  <Link to="/demo" className="btn btn-primary btn-arrow" style={{ alignSelf: 'flex-start', marginTop: 8 }}>جرّب بوابة المنصة<ArrowLeft /></Link>
                 </div>
               </div>
             </div>
